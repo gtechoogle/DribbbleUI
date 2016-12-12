@@ -8,13 +8,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/colorLaunch"
+    android:background="@color/launch_background_color"
     tools:context="com.gtechoogle.app.dribbbleui.wificonnect.MainActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:id="@+id/wifi_bt"
         android:text="@string/wi_fi"
-        android:background="@drawable/wifi_button"/>
+        style="@style/wifi_button_style"
+        android:background="@drawable/round_button"/>
 </RelativeLayout>

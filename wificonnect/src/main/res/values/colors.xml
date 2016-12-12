@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="colorLaunch">#ff2b4d67</color>
+    <color name="launch_background_color">#ff2b4d67</color>
 
     <color name="button_background">#ffffffff</color>
 </resources>

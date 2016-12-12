@@ -4,6 +4,11 @@
     <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="wifi_button_style">
+        <item name="android:textColor">@color/launch_background_color</item>
+        <item name="android:textSize">@dimen/wifi_button_text_size</item>
+    </style>
     <!--<style name="FullWallpaperTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
         <!--<item name="android:windowFullscreen">true</item>-->
         <!--<item name="android:windowContentOverlay">@null</item>-->
