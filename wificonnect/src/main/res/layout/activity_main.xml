@@ -11,12 +11,26 @@
     android:background="@color/launch_background_color"
     tools:context="com.gtechoogle.app.dribbbleui.wificonnect.MainActivity">
 
-    <Button
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:id="@+id/wifi_bt"-->
+        <!--android:text="@string/wi_fi"-->
+        <!--style="@style/wifi_button_style"-->
+        <!--android:background="@drawable/round_button"/>-->
+    <com.gtechoogle.app.dribbbleui.wificonnect.widget.WifiButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:id="@+id/wifi_bt"
         android:text="@string/wi_fi"
         style="@style/wifi_button_style"
-        android:background="@drawable/round_button"/>
+        android:layout_centerInParent="true"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/searching"
+        android:visibility="invisible"
+        android:background="@drawable/circle"/>
 </RelativeLayout>

@@ -2,26 +2,54 @@ package com.gtechoogle.app.dribbbleui.wificonnect;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
-public class MainActivity extends Activity implements View.OnClickListener {
-    private Button mWifiButton;
+import com.gtechoogle.app.dribbbleui.wificonnect.widget.WifiButton;
+
+public class MainActivity extends Activity {
+    private WifiButton mWifiButton;
+    private ImageView mLoading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mWifiButton = (Button) findViewById(R.id.wifi_bt);
-        mWifiButton.setOnClickListener(this);
+        mWifiButton = (WifiButton) findViewById(R.id.wifi_bt);
+        mWifiButton.setOnClickFinishedListener(new WifiButton.OnClickFinishedListener() {
+            @Override
+            public void onFinished() {
+                handleFinishClick();
+            }
+        });
+        mLoading = (ImageView) findViewById(R.id.searching);
+    }
+    public void handleFinishClick() {
+        mWifiButton.setVisibility(View.GONE);
+
+        Animation animUp = AnimationUtils.loadAnimation(this,
+                R.anim.searching_scale_up);
+        animUp.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                mLoading.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        mLoading.setAnimation(animUp);
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.wifi_bt) {
-            final Animation scale= AnimationUtils.loadAnimation(this, R.anim.wifi_button_scale);
-            view.startAnimation(scale);
-        }
-    }
+
 }
