@@ -10,15 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/launch_background_color"
     tools:context="com.gtechoogle.app.dribbbleui.wificonnect.MainActivity">
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:id="@+id/wifi_bt"-->
-        <!--android:text="@string/wi_fi"-->
-        <!--style="@style/wifi_button_style"-->
-        <!--android:background="@drawable/round_button"/>-->
     <com.gtechoogle.app.dribbbleui.wificonnect.widget.WifiButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +17,19 @@
         android:text="@string/wi_fi"
         style="@style/wifi_button_style"
         android:layout_centerInParent="true"/>
+    <com.skyfishjy.library.RippleBackground
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        app:rb_color="#0099CC"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="6">
+
+    </com.skyfishjy.library.RippleBackground>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

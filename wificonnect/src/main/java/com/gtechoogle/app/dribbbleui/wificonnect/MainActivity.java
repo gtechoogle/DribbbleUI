@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.gtechoogle.app.dribbbleui.wificonnect.widget.WifiButton;
+import com.skyfishjy.library.RippleBackground;
 
 public class MainActivity extends Activity {
     private WifiButton mWifiButton;
@@ -19,19 +20,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mWifiButton = (WifiButton) findViewById(R.id.wifi_bt);
+        mLoading = (ImageView) findViewById(R.id.searching);
         mWifiButton.setOnClickFinishedListener(new WifiButton.OnClickFinishedListener() {
             @Override
             public void onFinished() {
                 handleFinishClick();
             }
         });
-        mLoading = (ImageView) findViewById(R.id.searching);
     }
     public void handleFinishClick() {
         mWifiButton.setVisibility(View.GONE);
-
         Animation animUp = AnimationUtils.loadAnimation(this,
                 R.anim.searching_scale_up);
+        mLoading.setAnimation(animUp);
         animUp.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -40,7 +41,8 @@ public class MainActivity extends Activity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-
+                final RippleBackground rippleBackground=(RippleBackground)findViewById(R.id.content);
+                rippleBackground.startRippleAnimation();
             }
 
             @Override
@@ -48,8 +50,5 @@ public class MainActivity extends Activity {
 
             }
         });
-        mLoading.setAnimation(animUp);
     }
-
-
 }
